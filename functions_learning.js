@@ -1,7 +1,7 @@
 // Function Join ()
 const elements = ['Fire', 'Air', 'Water'];
-const separator_1 = ',';
-function ownJoin(arr,separator){
+const separator_1 = '-';
+function ownJoin(arr,separator=','){
     let final = arr[0];
     for (let i = 1; i < arr.length; i++) {
         final += `${separator}${arr[i]}`; 
