@@ -75,9 +75,18 @@ console.log("Concat function() result is :  " + ownConcat(arr_1,arr_2));
 
 //Function Slice()
 const animal = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+const number = [1,2,3,4,5];
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+
 console.log("My initial array is : " + animal );
 
 function ownSlice(arr,start,end) {
+  if(start < 0){
+    start = arr.length - (start * (-1)) ;
+  }
+  if(end < 0 ){
+         end = arr.length - (end * (-1)) ;
+  }
     let new_array = [];
     end = end > arr.length || !end ? arr.length : end;
     for(let i = start;i < end ;i++){
@@ -87,6 +96,8 @@ function ownSlice(arr,start,end) {
 }
 console.log("Slice function() result is :  " + ownSlice(animal,2));
 console.log("Slice function() result is :  " + ownSlice(animal,1,4));
+console.log("Slice function() result is :  " + ownSlice(number,1,-1));   // [2,3,4]
+console.log("Slice function() result is :  " + ownSlice(fruits,-3,-1)); // Lemon,Apple
 
 
 //Function Fill()
