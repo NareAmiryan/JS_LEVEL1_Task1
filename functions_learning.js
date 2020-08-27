@@ -27,10 +27,7 @@ console.log("Reverse function() result is :  " + ownReverse(array_1));
 //Function IndexOf()
 const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 console.log("My initial array is : " + beasts );
-function ownIndexOf(arr2, member,from_index){
-    if(!from_index){
-        from_index = 0;
-    }
+function ownIndexOf(arr2, member,from_index=0){
     for(i = from_index; i < arr2.length; i++){
         if(arr2[i] === member){
             return i;
@@ -76,17 +73,17 @@ console.log("Concat function() result is :  " + ownConcat(arr_1,arr_2));
 //Function Slice()
 const animal = ['ant', 'bison', 'camel', 'duck', 'elephant'];
 const number = [1,2,3,4,5];
-var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 
 console.log("My initial array is : " + animal );
 
 function ownSlice(arr,start,end) {
-  if(start < 0){
+    if(start < 0){
     start = arr.length - (start * (-1)) ;
-  }
-  if(end < 0 ){
+    }
+     if(end < 0 ){
          end = arr.length - (end * (-1)) ;
-  }
+    }
     let new_array = [];
     end = end > arr.length || !end ? arr.length : end;
     for(let i = start;i < end ;i++){
